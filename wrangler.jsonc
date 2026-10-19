@@ -5,7 +5,7 @@
   "assets": {
     "directory": "./build",
     "not_found_handling": "404-page"
-  }
-  // Once the domain's DNS is on Cloudflare, serve the site there:
-  // "routes": [{ "pattern": "your-domain.example", "custom_domain": true }]
+  },
+  // rehome.casa's DNS is on Cloudflare, so Workers attaches the domain (and its certificate) on deploy
+  "routes": [{ "pattern": "rehome.casa", "custom_domain": true }]
 }

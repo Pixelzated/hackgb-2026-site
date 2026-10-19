@@ -1,4 +1,7 @@
 <script>
+  import '../app.css';
+  import '@fontsource-variable/bricolage-grotesque/opsz.css';
+  import '@fontsource-variable/figtree';
   import { page } from '$app/state';
 </script>
 

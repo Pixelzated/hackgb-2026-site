@@ -8,12 +8,14 @@
   import ArrowRight from '@lucide/svelte/icons/arrow-right';
   import Sparkles from '@lucide/svelte/icons/sparkles';
   import House from '@lucide/svelte/icons/house';
+  import Cpu from '@lucide/svelte/icons/cpu';
   import AsciiHome from '$lib/landing/AsciiHome.svelte';
   import WireFigure from '$lib/landing/WireFigure.svelte';
   import ItemTag from '$lib/landing/ItemTag.svelte';
   import ReplayActivity from '$lib/landing/ReplayActivity.svelte';
+  import KioskDevice from '$lib/components/KioskDevice.svelte';
   import { photo, context, rehome } from '$lib/landing/figures.js';
-  import { DEVPOST, REPO, VIDEO, KIOSK } from '$lib/links.js';
+  import { DEVPOST, REPO, VIDEO, KIOSK, FOOTAGE } from '$lib/links.js';
 
   const STEPS = [
     { draw: photo, title: 'One photo becomes a listing' },
@@ -144,6 +146,31 @@
         <h3 class="font-display text-xl font-semibold tracking-tight">{step.title}</h3>
       </article>
     {/each}
+  </div>
+</section>
+
+<!-- The kiosk: its real screen, running on stock footage instead of a webcam -->
+<section id="kiosk" class="mx-auto max-w-6xl scroll-mt-6 px-4 pb-28 sm:px-6">
+  <div class="grid items-center gap-14 md:grid-cols-[1fr_auto] md:gap-20">
+    <div>
+      <p class="flex items-center gap-2 font-mono text-sm text-lamp-ink">
+        <span class="grid size-6 place-items-center rounded-md bg-lamp/15"><Cpu class="size-3.5" /></span>
+        Best Hardware Hack
+      </p>
+      <h2 class="mt-4 max-w-xl font-display text-4xl leading-[1.05] font-semibold tracking-[-0.025em] sm:text-5xl">
+        And a kiosk for the drop-off bin.
+      </h2>
+      <p class="mt-5 max-w-md text-lg text-pretty text-ink-soft">
+        A Raspberry Pi with a webcam, one button and two LEDs. Hold something up, press, and it’s on the shelf.
+      </p>
+      <a href={KIOSK} class="mt-8 inline-flex items-center gap-2 rounded-full bg-ink/7 px-5 py-2.5 font-medium transition hover:bg-ink/12">
+        The kiosk’s code <ArrowRight class="size-4" />
+      </a>
+      <p class="mt-10 font-mono text-xs text-ink-soft">
+        This demo watches <a href={FOOTAGE} class="underline underline-offset-4 hover:text-ink">stock footage</a> instead of a webcam.
+      </p>
+    </div>
+    <KioskDevice />
   </div>
 </section>
 
