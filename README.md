@@ -6,6 +6,8 @@ It is the app's landing page without the app: the ASCII hero, the "How it works"
 
 It also has a playable demo of the Raspberry Pi kiosk (`/kiosk`, shown in a drawing of the device). It's the real kiosk UI from the [`feature/kiosk`](https://github.com/shuja-waraich-03/HackGB/tree/feature/kiosk/rehome/kiosk) branch with its hardware and backend faked: a stock video stands in for the webcam, the drawing's button and LEDs stand in for the Grove ones, and the agents' answers are scripted. Opened on its own, `/kiosk` fills the screen like the real thing (space or a tap is the button).
 
+Next to it, a clip of the real kiosk at the HackGB expo table plays as ASCII art. Both use `src/lib/ascii-video.js`, which draws a video as colored ASCII with line characters along edges. It eases brightness and color between frames, so the picture doesn't shimmer.
+
 SvelteKit + Tailwind CSS, prerendered to plain files with `@sveltejs/adapter-static`, and served by Cloudflare Workers as static assets.
 
 ## Run it
@@ -35,8 +37,10 @@ npm run preview    # serves build/
 | `src/app.css` | Colors and fonts, shared with the app |
 | `src/routes/kiosk/`, `src/lib/kiosk/` | The kiosk demo: the kiosk's UI, with `hw.js` and `api.js` faked for the web |
 | `src/lib/components/KioskDevice.svelte` | The kiosk drawing around the demo: LEDs and the button |
+| `src/lib/ascii-video.js`, `src/lib/components/AsciiClip.svelte` | Video → colored ASCII on a canvas |
 | `static/media/sweater.mp4` | The demo's "webcam" |
+| `static/media/kiosk-expo.mp4` | The real kiosk at the expo (216×384, no sound; only ever shown as ASCII) |
 
 ## Credits
 
-The kiosk demo's footage is [Woman Holding a Knitted Sweater](https://www.pexels.com/video/woman-holding-a-knitted-sweater-7578150/) by Miriam Alonso on Pexels ([Pexels license](https://www.pexels.com/license/)), cut to 480p without sound.
+The kiosk demo's footage is [Woman Holding a Knitted Sweater](https://www.pexels.com/video/woman-holding-a-knitted-sweater-7578150/) by Miriam Alonso on Pexels ([Pexels license](https://www.pexels.com/license/)), cut to 480p without sound. The expo clip is the team's own footage.

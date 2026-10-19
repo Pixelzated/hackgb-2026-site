@@ -75,5 +75,5 @@
       </button>
     </div>
   </div>
-  <figcaption class="mt-4 text-center font-mono text-xs text-ink-soft">press the button · hold it to sell</figcaption>
+  <figcaption class="mt-4 text-center font-mono text-xs text-ink-soft">try it: press the button, or hold it to sell</figcaption>
 </figure>
