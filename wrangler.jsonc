@@ -1,0 +1,11 @@
+// Cloudflare Workers: serve the prerendered site in build/ as static assets. No Worker script needed.
+{
+  "name": "rehome",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./build",
+    "not_found_handling": "404-page"
+  }
+  // Once the domain's DNS is on Cloudflare, serve the site there:
+  // "routes": [{ "pattern": "your-domain.example", "custom_domain": true }]
+}
